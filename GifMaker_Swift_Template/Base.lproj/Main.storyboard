@@ -204,12 +204,19 @@
                     <navigationItem key="navigationItem" title="Title" id="98w-hN-q9u">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="kvy-5V-EgW">
                             <color key="tintColor" red="1" green="0.25490196079999999" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="presentPreview:" destination="gN0-HT-VRx" id="yyK-0p-I9A"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="captionTextField" destination="Hx5-Iw-gBr" id="dFf-sv-M19"/>
+                        <outlet property="gifImageView" destination="Idg-S9-dYE" id="ffV-94-klQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSQ-pK-rKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-135" y="-783.75"/>
+            <point key="canvasLocation" x="25" y="-1532"/>
         </scene>
         <!--Gif Preview View Controller-->
         <scene sceneID="6jO-Zd-0F6">
@@ -240,6 +247,9 @@
                                         <state key="normal" title="SHARE">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="shareGif:" destination="cB7-Y1-ZFX" eventType="touchUpInside" id="eoA-AB-sYM"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xoi-MZ-GNH">
                                         <rect key="frame" x="0.0" y="66" width="560" height="50"/>
@@ -266,6 +276,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Preview" id="SWX-N6-oaS"/>
+                    <connections>
+                        <outlet property="gifImageView" destination="HQu-c2-zTO" id="dXJ-0m-NU8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCC-tI-bRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -327,10 +340,10 @@
             </objects>
             <point key="canvasLocation" x="1215" y="66"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="MO7-ys-2QJ">
             <objects>
-                <viewController storyboardIdentifier="WelcomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aXC-Xw-CZL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aXC-Xw-CZL" customClass="WelcomeViewController" customModule="GifMaker_Swift_Template" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FzV-E8-2I8"/>
                         <viewControllerLayoutGuide type="bottom" id="IJD-un-28D"/>
@@ -363,6 +376,9 @@
                                     <constraint firstAttribute="width" constant="60" id="nKa-D8-wqn"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="createButton"/>
+                                <connections>
+                                    <action selector="presentVideoOptions:" destination="aXC-Xw-CZL" eventType="touchUpInside" id="pBe-zw-ZY8"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mvh-6r-tbq">
                                 <rect key="frame" x="20" y="520" width="560" height="0.0"/>
@@ -480,6 +496,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="GOk-gI-dlu"/>
                     <connections>
+                        <outlet property="gifImageView" destination="Wun-5B-Ruk" id="tQz-wY-FUn"/>
                         <segue destination="gN0-HT-VRx" kind="show" identifier="showGifEditor" id="wkV-9i-gKS"/>
                     </connections>
                 </viewController>
